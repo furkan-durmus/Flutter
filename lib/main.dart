@@ -12,18 +12,25 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.green),
       home: Scaffold(
         appBar: AppBar(),
-        body: Center(child: yazi("AnaSayfa")),
+        body: Center(
+            child: kimlik(
+          isim: "Furkan",
+          soyad: "Durmuş ",
+          yas: 21,
+        )),
       ),
     );
   }
 }
 
-class yazi extends StatelessWidget {
-  final String icerik;
-  yazi(this.icerik);
+class kimlik extends StatelessWidget {
+  final String isim;
+  final String soyad;
+  final int yas;
+  kimlik({this.isim, this.soyad, this.yas});
 
   @override
   Widget build(BuildContext context) {
-    return Text(icerik);
+    return Text("İsim : $isim Soyad : $soyad  Yas : $yas");
   }
 }
