@@ -21,23 +21,15 @@ class Mesaj extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Yeni(),
-    );
-  }
-}
-
-class Yeni extends StatelessWidget {
-  const Yeni({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return RaisedButton(
-      onPressed: () {
-        Scaffold.of(context).showSnackBar(SnackBar(content: Text("Merhaba")));
-      },
-      child: Text("Mesaj At"),
+      body: Builder(builder: (BuildContext context) {
+        return RaisedButton(
+          onPressed: () {
+            Scaffold.of(context)
+                .showSnackBar(SnackBar(content: Text("Merhaba")));
+          },
+          child: Text("Mesaj At"),
+        );
+      }),
     );
   }
 }
