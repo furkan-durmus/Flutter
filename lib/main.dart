@@ -12,12 +12,20 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.green),
       home: Scaffold(
         appBar: AppBar(),
-        body: Center(
-            child: kimlik(
-          isim: "Furkan",
-          soyad: "Durmuş ",
-          yas: 21,
-        )),
+        body: Column(
+          children: [
+            kimlik(
+              isim: "Furkan",
+              soyad: "Durmuş",
+              yas: 25,
+            ),
+            kimlik(
+              isim: "Ferit",
+              soyad: "Durmuş",
+              yas: 32,
+            )
+          ],
+        ),
       ),
     );
   }
