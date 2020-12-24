@@ -11,38 +11,33 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Flutter Demo",
       theme: ThemeData(primarySwatch: Colors.green),
-      home: Sayac(isim: "Bardak"),
+      home: Mesaj(),
     );
   }
 }
 
-class Sayac extends StatefulWidget {
-  final String isim;
-  Sayac({this.isim});
-  @override
-  _SayacState createState() => _SayacState();
-}
-
-class _SayacState extends State<Sayac> {
-  int sayi = 0;
-
+class Mesaj extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Text("${widget.isim} sayısı : $sayi"),
-      floatingActionButton: FloatingActionButton(
-          onPressed:
-              sayiarttir), //   bu kısımda () a sağ tıkladık, refactor dedik, extract metot ile verdiğimiz isimde bir metot oluşturdu. ilk hali anonim fonksiyon içindeydi. onPressed (){sayiarttir();} da olurdu,onPressed ()=>sayiarttir()   da olur
+      body: Yeni(),
     );
   }
+}
 
-  void sayiarttir() {
-    print("Butona Basıldı(debug consolda yazdırır.)");
-    setState(() {
-      //setstate den önce de sayi ++ yazsak çalışırdı. Önemli olan setstate ile builde değişikliği haber vermek.
-      sayi++;
-      print(sayi);
-    });
+class Yeni extends StatelessWidget {
+  const Yeni({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return RaisedButton(
+      onPressed: () {
+        Scaffold.of(context).showSnackBar(SnackBar(content: Text("Merhaba")));
+      },
+      child: Text("Mesaj At"),
+    );
   }
 }
