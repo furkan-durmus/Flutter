@@ -12,8 +12,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.green),
       home: Scaffold(
         appBar: AppBar(),
-        body: Center(child: Text("Anasayfa")),
+        body: Center(child: yazi("AnaSayfa")),
       ),
     );
+  }
+}
+
+class yazi extends StatelessWidget {
+  final String icerik;
+  yazi(this.icerik);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(icerik);
   }
 }
