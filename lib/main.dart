@@ -26,7 +26,7 @@ class Mesaj extends StatelessWidget {
       body: RaisedButton(
         onPressed: () {
           anahtar.currentState
-              .showSnackBar(SnackBar(content: Text("Merhaba ")));
+              .showSnackBar(SnackBar(content: Text("Merhaba  ")));
         },
         child: Text("Mesaj At"),
       ),
