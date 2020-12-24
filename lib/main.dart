@@ -17,19 +17,19 @@ class MyApp extends StatelessWidget {
 }
 
 class Mesaj extends StatelessWidget {
+  final GlobalKey<ScaffoldState> anahtar = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: anahtar,
       appBar: AppBar(),
-      body: Builder(builder: (BuildContext context) {
-        return RaisedButton(
-          onPressed: () {
-            Scaffold.of(context)
-                .showSnackBar(SnackBar(content: Text("Merhaba")));
-          },
-          child: Text("Mesaj At"),
-        );
-      }),
+      body: RaisedButton(
+        onPressed: () {
+          anahtar.currentState
+              .showSnackBar(SnackBar(content: Text("Merhaba ")));
+        },
+        child: Text("Mesaj At"),
+      ),
     );
   }
 }
